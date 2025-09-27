@@ -1,20 +1,17 @@
-# Program #5: Bank Balance
-# Write a program that asks the user to enter the amount that he or she has budgeted for a month.
-# A loop should then prompt the user to enter each of his or her expenses for the 
-# month and keep a running total. (Enter 0 to exit the loop)  
-# When the loop finishes, the program should display the amount that the 
-# user is over or under budget.
+#Title: Budget Calculator
+#Author: Arianna Endres
+#Date: 09/26/2025
 
-def main():
-    budget = 0.0
-    difference = 0.0
-    spent = 1.0         #initialize for while loop
-    total = 0.0
+total = 0
+budget = float(input('What was your budget? $'))
+print('Enter expenses or enter 0 to end.')
+expense = float(input('Expense: $'))
+while expense != 0:
+    total += expense
+    expense = float(input('Next expense: $'))
 
-    ######################
-    # WRITE YOUR CODE HERE
-    ######################
-
-
-if __name__ == '__main__':
-    main()
+print(f'Your total expenses are ${total:.2f}')
+if total > budget:
+    print('You’re over budget, try to cut back on your spending.')
+else:
+    print('You’re under budget, great job!')
